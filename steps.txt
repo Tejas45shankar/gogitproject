@@ -1,0 +1,104 @@
+tejas@tejas-VirtualBox:~/gitproject$ git status
+fatal: not a git repository (or any of the parent directories): .git
+tejas@tejas-VirtualBox:~/gitproject$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/tejas/gitproject/.git/
+tejas@tejas-VirtualBox:~/gitproject$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.go
+
+nothing added to commit but untracked files present (use "git add" to track)
+tejas@tejas-VirtualBox:~/gitproject$ ls -al
+total 16
+drwxrwxr-x  3 tejas tejas 4096 Jun 29 11:16 .
+drwxr-x--- 28 tejas tejas 4096 Jun 29 11:15 ..
+drwxrwxr-x  7 tejas tejas 4096 Jun 29 11:17 .git
+-rw-rw-r--  1 tejas tejas   63 Jun 29 11:16 index.go
+tejas@tejas-VirtualBox:~/gitproject$ git add .
+tejas@tejas-VirtualBox:~/gitproject$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.go
+
+tejas@tejas-VirtualBox:~/gitproject$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.go
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.go
+
+tejas@tejas-VirtualBox:~/gitproject$ git add .
+tejas@tejas-VirtualBox:~/gitproject$ git add .
+tejas@tejas-VirtualBox:~/gitproject$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.go
+
+tejas@tejas-VirtualBox:~/gitproject$ git commit -m "git practise"
+[master (root-commit) c7214d1] git practise
+ 1 file changed, 8 insertions(+)
+ create mode 100644 index.go
+tejas@tejas-VirtualBox:~/gitproject$ git status
+On branch master
+nothing to commit, working tree clean
+tejas@tejas-VirtualBox:~/gitproject$ git log
+commit c7214d105c6cc9a53d6c3960b1aabdc68ec4c152 (HEAD -> master)
+Author: tejasshankar45@gmail.com <Sriindhuabhishankar45@>
+Date:   Wed Jun 29 11:22:01 2022 +0530
+
+    git practise
+tejas@tejas-VirtualBox:~/gitproject$ ^[[200~git remote add origin https://github.com/Tejas45shankar/gogitproject.git
+t push -u origin main^[[201~git: command not found
+tejas@tejas-VirtualBox:~/gitproject$ git branch -M main
+tejas@tejas-VirtualBox:~/gitproject$ git push -u origin main
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+tejas@tejas-VirtualBox:~/gitproject$ git remote add origin https://github.com/Tejas45shankar/gogitproject.git
+tejas@tejas-VirtualBox:~/gitproject$ git remote -v
+origin  https://github.com/Tejas45shankar/gogitproject.git (fetch)
+origin  https://github.com/Tejas45shankar/gogitproject.git (push)
+tejas@tejas-VirtualBox:~/gitproject$ git branch -M main
+tejas@tejas-VirtualBox:~/gitproject$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Tejas45shankar/gogitproject.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+tejas@tejas-VirtualBox:~/gitproject$ ^C
+tejas@tejas-VirtualBox:~/gitproject$ 
